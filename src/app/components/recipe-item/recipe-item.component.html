@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">{{ recipe.title }}</h1>
+    <p class="card-text">{{ recipe.description }}</p>
+
+    <button
+      *ngIf="!isSelected"
+      class="btn btn-primary"
+      (click)="toggleDetails()"
+    >
+      View Details
+    </button>
+
+    <div *ngIf="isSelected">
+      <p>{{ recipe.ingredients }}</p>
+      <p>{{ recipe.instructions }}</p>
+      <button class="btn btn-secondary" (click)="toggleDetails()">
+        Hide Details
+      </button>
+    </div>
+  </div>
+</div>

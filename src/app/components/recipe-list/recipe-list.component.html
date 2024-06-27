@@ -1,0 +1,18 @@
+<div class="row my-2">
+  <div class="form-outline border rounded" data-mdb-input-init>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Search"
+      [(ngModel)]="searchText"
+      placeholder="Search recipes"
+    />
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item d-grid gap-2" style="min-width: 101%">
+      @for(recipe of recipes | recipeFilter: searchText; track $index){
+      <app-recipe-item [recipe]="recipe"></app-recipe-item>
+      }
+    </li>
+  </ul>
+</div>

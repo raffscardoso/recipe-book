@@ -1,0 +1,18 @@
+@if(selectedRecipe){
+<div>
+  <h2>{{ selectedRecipe.title }}</h2>
+  <p>{{ selectedRecipe.description }}</p>
+  <h4>Ingredients:</h4>
+  <ul>
+    @for (ingredient of selectedRecipe.ingredients; track $index) {
+    <li></li>
+    }
+  </ul>
+  <h4>Instructions</h4>
+  <ol>
+    @for (step of selectedRecipe.instructions; track $index){
+    <li>{{ step }}</li>
+    }
+  </ol>
+</div>
+}
